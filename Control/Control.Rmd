@@ -1,0 +1,84 @@
+---
+title: "Control"
+author: "Maxwel C. Oliveira"
+date: "October 18, 2017"
+output: html_document
+---
+
+```{r}
+library(ggplot2)
+```
+
+
+
+```{r setup, include=FALSE}
+PRE=read.csv("PRE.csv")
+```
+
+
+
+```{r cars}
+ggplot(PRE, aes(fill=trt, x=trt, y=control)) + geom_bar(position="dodge", width=0.6, stat="identity", color="black") + 
+  labs(y="Control (%)", x="") + scale_y_continuous(limits=c(0,100)) +
+  theme(axis.text=element_text(size=15, color="black"), 
+        axis.title=element_text(size=22,face="bold"), 
+        panel.background = element_rect(color="black", fill = "white"), 
+        panel.grid.major = element_line(color = "white"), 
+        #panel.grid.minor = element_blank(),
+        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.ticks.x=element_blank(), legend.position="none",
+        legend.background = element_rect(colour = "black"),
+        legend.title=element_blank()) + 
+  scale_fill_manual(values=c("black", "blue", "orange", "green",
+                             "yellow", "grey", "red", "pink", "navy")) + 
+ggsave("PRE.tiff", units="in", width=10, height=5, dpi=500)
+```
+
+
+```{r setup, include=FALSE}
+POST=read.csv("POST.csv")
+```
+
+
+
+```{r cars}
+ggplot(POST, aes(fill=trt, x=trt, y=control)) + geom_bar(position="dodge", width=0.6, stat="identity", color="black") + 
+  labs(y="Control (%)", x="") + scale_y_continuous(limits=c(0,100)) +
+  theme(axis.text=element_text(size=15, color="black"), 
+        axis.title=element_text(size=22,face="bold"), 
+        panel.background = element_rect(color="black", fill = "white"), 
+        panel.grid.major = element_line(color = "white"), 
+        #panel.grid.minor = element_blank(),
+        axis.text.x = element_text(angle = 30, hjust = 1),
+        axis.ticks.x=element_blank(), legend.position="none",
+        legend.background = element_rect(colour = "black"),
+        legend.title=element_blank()) + 
+  scale_fill_manual(values=c("black", "blue", "orange", "green",
+                             "yellow", "grey", "red", "pink", "navy")) + 
+ggsave("POST.tiff", units="in", width=6, height=5, dpi=500)
+```
+
+
+```{r setup, include=FALSE}
+PP=read.csv("PP.csv")
+```
+
+
+
+```{r cars}
+ggplot(PP, aes(fill=trt, x=trt, y=control)) + geom_bar(position="dodge", width=0.6, stat="identity", color="black") + 
+  labs(y="Control (%)", x="") + scale_y_continuous(limits=c(0,100)) +
+  theme(axis.text=element_text(size=16, color="black"), 
+        axis.title=element_text(size=22,face="bold"), 
+        panel.background = element_rect(color="black", fill = "white"), 
+        panel.grid.major = element_line(color = "white"), 
+        #panel.grid.minor = element_blank(),
+        axis.text.x = element_text(angle = 50, hjust = 1),
+        axis.ticks.x=element_blank(), legend.position="none",
+        legend.background = element_rect(colour = "black"),
+        legend.title=element_blank()) + 
+  scale_fill_manual(values=c("black", "blue", "orange", "green",
+                             "yellow", "grey", "red", "pink", "navy", "lightblue", "purple", 
+                             "violet", "grey50", "gold", "beige")) + 
+ggsave("PP.tiff", units="in", width=18, height=9, dpi=500)
+```
